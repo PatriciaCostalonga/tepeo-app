@@ -1,0 +1,115 @@
+@import '../colours.scss';
+:host{
+    padding: 10%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .mockdata-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        max-width: 1502px;
+        align-items: center;
+        margin-bottom: 120px;
+    
+        &:nth-of-type(even){
+            flex-direction: row-reverse;
+        }
+
+        &:first-of-type,
+        &:nth-of-type(2){
+            .text-container{
+                .text-details{
+                    h2{
+                        overflow-wrap: break-word;
+                        width: 65%;
+                    }
+                }
+            }
+        }
+    
+        img{
+            width: 750px;
+            height: 636px;
+            border-radius: 150px;
+            object-fit: cover;
+            background-repeat: no-repeat;
+        }
+    
+        .text-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            height: 100%;
+            
+            .text-details{
+                position: absolute;
+                max-width: 640px;
+                top: 30%;
+    
+                h2{
+                    font-family: 'Montserrat', sans-serif;
+                }
+    
+                p{
+                    font-family: 'Open Sans', sans-serif;
+                }
+            }
+    
+            .random-blob{
+                display: block;
+                width: 540px;
+                height: auto;
+                position: relative;
+            }
+        }
+    }
+}
+
+//mobile 
+@media only screen and (max-width: 480px) {
+    :host{
+        height: 100%;
+        width: 100%;
+        padding-top: 80px;
+
+        .mockdata-container,
+        .mockdata-container:nth-of-type(even){
+            flex-direction: column;
+            max-width: 480px;
+            margin-bottom: 20px;
+
+            &:nth-of-type(2){
+                .text-container{
+                    .text-details{
+                        h2{
+                            overflow-wrap: break-word;
+                            width: 100%;;
+                        }
+                    }
+                }
+            }
+
+            img{
+                width: 420px;
+                height: 360px;
+            }
+
+            .text-container{
+                .text-details{
+                    max-width: 420px;
+                    top: 16%;
+                }
+
+                .random-blob{
+                    max-width: 420px;
+                }
+            }
+        }
+    }
+}

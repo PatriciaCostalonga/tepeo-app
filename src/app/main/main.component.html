@@ -1,0 +1,12 @@
+<section *ngFor="let item of mockData" class="mockdata-container">
+    <img [src]="item.imageSrc"/>
+    
+    <div class="text-container">
+        <img class="random-blob" [src]="item.blob"/>
+        
+        <div class="text-details">
+            <h2 [highlight]="['not the planet', 'clean', 'green', 'affordable', 'power you generate']">{{item.title}}</h2>
+            <p [highlight]="['future', 'green sustainable heating', 'Zero Emission Boiler', 'automatically store']">{{ item.description }}</p>
+        </div>
+    </div>
+</section>
