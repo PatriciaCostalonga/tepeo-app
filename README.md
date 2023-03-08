@@ -1,26 +1,38 @@
-# TepeoApp
+# Tepeo App
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.1.
+Tepeo App is a landing page for the company Tepeo focused on zero emission boilers, heating up your home, not the planet!
 
-## Development server
+## Table of Contents
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Contributing](#contributing)
+- [License](#license)
 
-## Code scaffolding
+## Installation
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+To install Tepeo App, follow these steps:
 
-## Build
+1. Clone the repository to your local machine.
+2. Install the necessary dependencies by running `npm install`. And if needed `npm install @angular/cli`, if you don't have Angular globablly installed in your machine.
+3. Start the application by running `npm start`.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Usage
 
-## Running unit tests
+To use Tepeo App, open a web browser and navigate to `http://localhost:4200`. 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Features
 
-## Running end-to-end tests
+Tepeo App comes with the following features:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+- Dark and Light mode themes
+- Highlighted regex keys -> easily to change the ones you would like to highlight in a text
+- Images and text coming from a mocked up data
+
+## License
+
+Tepeo App is licensed under the [MIT License](LICENSE).
 
 ## Further help
 
