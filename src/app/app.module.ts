@@ -7,13 +7,15 @@ import { MockDataService } from './mock-data/mock-data.service';
 import { HighlightDirective } from './highlight.directive';
 
 import { AppComponent } from './app.component';
+import { SectionComponent } from './main/section/section.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     MainComponent,
-    HighlightDirective
+    HighlightDirective,
+    SectionComponent
   ],
   imports: [
     BrowserModule
