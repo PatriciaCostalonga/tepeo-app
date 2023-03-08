@@ -1,0 +1,55 @@
+@import '../../colours.scss';
+
+
+:host{
+    .mockdata-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        max-width: 1502px;
+        align-items: center;
+        margin-bottom: 120px;
+    
+        &:nth-of-type(even){
+            flex-direction: row-reverse;
+        }
+    
+        img{
+            width: 750px;
+            height: 636px;
+            border-radius: 150px;
+            object-fit: cover;
+            background-repeat: no-repeat;
+        }
+    
+        .text-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            height: 100%;
+            
+            .text-details{
+                position: absolute;
+                max-width: 640px;
+                top: 30%;
+    
+                h2{
+                    font-family: 'Montserrat', sans-serif;
+                }
+    
+                p{
+                    font-family: 'Open Sans', sans-serif;
+                }
+            }
+    
+            .random-blob{
+                display: block;
+                width: 540px;
+                height: auto;
+                position: relative;
+            }
+        }
+    }
+} 
