@@ -1,4 +1,5 @@
-@import '../colours.scss';
+@import '../scss-variables/colours.scss';
+@import '../scss-variables/breakpoints.scss';
 
 :host{
     width: 80%;
@@ -29,7 +30,7 @@
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024px){
+@media (min-width: ($bp-desktop + 1px)) and (max-width: $bp-desktop-medium){
     :host{
         width: 90%;
         padding: 0 5%;
@@ -37,7 +38,7 @@
 }
 
 //tablet & large screen
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: ($bp-mobile + 1px)) and (max-width: $bp-tablet) {
     :host{
         height: 80px;
         width: 90%;
@@ -50,7 +51,7 @@
 }
 
 //mobile 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: $bp-mobile) {
     :host{
         width: 90%;
         padding: 0 5%;
