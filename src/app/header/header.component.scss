@@ -1,7 +1,7 @@
 @import '../colours.scss';
 
 :host{
-    width: 100%;
+    width: 80%;
     height: 112px;
     background-color: $grey-100;
     position: fixed;
@@ -10,11 +10,11 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    padding: 0 10%;
 
     .logo{
         font-family: 'Montserrat', sans-serif;
         font-size: 32px;
-        margin-left: 10%;
     }
 
     button{
@@ -26,22 +26,38 @@
         cursor: pointer;
         box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
         font-family: 'Open Sans', sans-serif;
-        margin-right: 10%;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px){
+    :host{
+        width: 90%;
+        padding: 0 5%;
+    }
+}
+
+//tablet & large screen
+@media (min-width: 481px) and (max-width: 768px) {
+    :host{
+        height: 80px;
+        width: 90%;
+        padding: 0 5%;
+
+        .logo{
+            font-size: 24px;
+        }
     }
 }
 
 //mobile 
 @media only screen and (max-width: 480px) {
     :host{
+        width: 90%;
+        padding: 0 5%;
         height: 60px;
-    }
 
-    .logo{
-        margin-left: 20px;
-        font-size: 24px;
-    }
-
-    .button{
-        margin-right: 10%;
+        .logo{
+            font-size: 24px;
+        }
     }
 }

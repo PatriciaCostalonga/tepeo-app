@@ -1,16 +1,24 @@
 :host{
-    padding: 10%;
-    padding-top: 10vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    width: 80%;
+    padding: 10%;
+    padding-top: 10vh;
 }
 
-@media only screen and (max-width: 480px) {
+@media (min-width: 1025px) and (max-width: 1440px){
     :host{
-        height: 100%;
-        width: 100%;
-        padding-top: 80px;
+        padding-top: 16vh;
+    }
+}
+
+@media (max-width: 1024px){
+    :host{
+        width: 90%;
+        padding: 5%;
+        padding-top: 10vh;
     }
 }
