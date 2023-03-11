@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-@import './app/colours.scss';
+@import './app/scss-variables/colours.scss';
 
 html {
     scroll-behavior: smooth;
@@ -20,11 +20,11 @@ body{
     width: 100%;
 
     &.dark-theme {
-        color: #eee;
-        background-color: #252222;
+        color: $grey-200;
+        background-color: $grey-800;
 
         header{
-            background-color:  #363232;
+            background-color:  $grey-700;
         }
 
         .random-blob{
@@ -32,26 +32,26 @@ body{
         }
 
         button{
-            background-color: #585151;
-            color: #eee;
+            background-color: $grey-600;
+            color: $grey-200;
         }
 
         span.highlight{
-            background-color: #F9812A;
+            background-color: $orange-600;
         }
     }
 
     &.light-theme {
         background-color: $grey-100;
-        color: #222;
+        color: $grey-900;
 
         header{
-            background-color: #eee;
+            background-color: $grey-200;
         }
 
         button{
-            background-color: #eee;
-            color: #585151;
+            background-color: $grey-200;
+            color: $grey-600;
         }
     }
 

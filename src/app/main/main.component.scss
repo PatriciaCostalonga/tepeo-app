@@ -1,3 +1,5 @@
+@import '../scss-variables/breakpoints.scss';
+
 :host{
     display: flex;
     flex-direction: column;
@@ -9,13 +11,13 @@
     padding-top: 10vh;
 }
 
-@media (min-width: 1025px) and (max-width: 1440px){
+@media (min-width: ($bp-desktop + 1px)) and (max-width: $bp-desktop-medium){
     :host{
         padding-top: 16vh;
     }
 }
 
-@media (max-width: 1024px){
+@media (max-width: $bp-desktop){
     :host{
         width: 90%;
         padding: 5%;

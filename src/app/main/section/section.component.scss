@@ -1,3 +1,6 @@
+@import '../../scss-variables/colours.scss';
+@import '../../scss-variables/breakpoints.scss';
+
 :host{
     width: 100%;
     display: flex;
@@ -67,8 +70,7 @@
     }    
 }
 
-//large screens
-@media (min-width: 1025px) and (max-width: 1440px){
+@media (min-width: ($bp-desktop + 1px)) and (max-width: $bp-desktop-medium){
     :host{
         .mockdata-container,
         .mockdata-container:nth-of-type(even){
@@ -109,8 +111,7 @@
     }
 }
 
-//landscape tablet & desktop screen
-@media (min-width: 769px) and (max-width: 1024px) {
+@media (min-width: ($bp-tablet + 1px)) and (max-width: $bp-desktop) {
     :host{
         .mockdata-container,
         .mockdata-container:nth-of-type(even){
@@ -152,8 +153,7 @@
     }
 }
 
-//tablet
-@media (min-width: 481px) and (max-width: 768px) {
+@media (min-width: ($bp-mobile + 1px)) and (max-width: $bp-tablet) {
     :host{
         .mockdata-container,
         .mockdata-container:nth-of-type(even){
@@ -205,8 +205,7 @@
     }
 }
 
-//mobile 
-@media only screen and (max-width: 480px) {
+@media only screen and (max-width: $bp-mobile) {
     :host{
         width: 100%;
 
