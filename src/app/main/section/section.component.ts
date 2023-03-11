@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild, HostListener } from '@angular/core';
 import { MockDataService } from '../../mock-data/mock-data.service';
 import { HighlightDirective } from '../../highlight.directive';
 
@@ -13,8 +13,9 @@ export class SectionComponent implements OnInit {
   @ViewChild('content') content: ElementRef;
 
   mockData: any[];
+  el: ElementRef;
 
-  constructor(private mockDataService: MockDataService) { }
+  constructor(private mockDataService: MockDataService, private elementRef: ElementRef) { }
 
   ngOnInit(): void {
     this.mockDataService.getMockData().subscribe((data) => {
@@ -35,5 +36,28 @@ export class SectionComponent implements OnInit {
 
       this.content.nativeElement.innerHTML = textContent;
     }
+  }
+
+  ngAfterViewInit() {
+    this.content.nativeElement.classList.add('fade-in-section');
+    this.el = this.elementRef;
+  }
+
+  @HostListener('window:scroll', ['$event'])
+  checkInView() {
+    const element = this.el.nativeElement;
+    if (this.isElementInViewport(element)) {
+      element.classList.add('fade-in');
+    }
+  }
+
+  isElementInViewport(el: any) {
+    const rect = el.getBoundingClientRect();
+    return (
+      rect.top >= 0 &&
+      rect.left >= 0 &&
+      rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
   }
 }
