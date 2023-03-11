@@ -1,5 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild, HostListener } from '@angular/core';
 import { MockDataService } from '../../mock-data/mock-data.service';
+import { Observable } from 'rxjs';
 import { HighlightDirective } from '../../highlight.directive';
 
 @Component({
@@ -12,14 +13,14 @@ export class SectionComponent implements OnInit {
   @Input() searchTerm: string | string[];
   @ViewChild('content') content: ElementRef;
 
-  mockData: any[];
+  mockData$: Observable<any[]>;
   el: ElementRef;
 
   constructor(private mockDataService: MockDataService, private elementRef: ElementRef) { }
 
   ngOnInit(): void {
     this.mockDataService.getMockData().subscribe((data) => {
-      this.mockData = data;
+      this.mockData$ = this.mockDataService.getMockData();
     });
   }
 
