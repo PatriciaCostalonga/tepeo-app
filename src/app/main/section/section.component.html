@@ -1,14 +1,14 @@
 <div *ngFor="let item of mockData$ | async; let i = index;" class="mockdata-container" appInViewport (inViewport)="onInViewport(item)">
   <img [src]="item.imageSrc" [ngClass]="{'fadeIn': item.show}" [@fadeIn]="item.show ? 'visible' : 'hidden'"/>
 
-  <div class="text-container" [ngClass]="{'fadeIn': item.show}" [@fadeIn]="item.show ? 'visible' : 'hidden'">
-    <img [src]="item.blob" class="random-blob" />
+    <div class="text-container" [ngClass]="{'fadeIn': item.show}" [@fadeIn]="item.show ? 'visible' : 'hidden'">
+      <img [src]="item.blob" class="random-blob" />
 
-    <div class="text-details">
-      <h2 [highlight]="['not the planet', 'clean', 'green', 'affordable', 'power you generate']">{{ item.title }}</h2>
-      <p [highlight]="['future', 'green sustainable heating', 'Zero Emission Boiler', 'automatically store']">
-        {{ item.description }}
-      </p>
+      <div class="text-details">
+        <h2 [highlight]="['not the planet', 'clean', 'green', 'affordable', 'power you generate']">{{ item.title }}</h2>
+        <p [highlight]="['future', 'green sustainable heating', 'Zero Emission Boiler', 'automatically store']">
+          {{ item.description }}
+        </p>
+      </div>
     </div>
-  </div>
 </div>

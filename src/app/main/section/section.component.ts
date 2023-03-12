@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, ViewChild, HostListener, TemplateRef } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild, HostListener, ChangeDetectorRef } from '@angular/core';
 import { MockDataService } from '../../mock-data/mock-data.service';
 import { Observable } from 'rxjs';
 import { HighlightDirective } from '../../highlight.directive';
@@ -31,8 +31,12 @@ export class SectionComponent implements OnInit {
 
   mockData$: Observable<any[]>;
   el: ElementRef;
+  shownItems: any[] = [];
 
-  constructor(private mockDataService: MockDataService, private elementRef: ElementRef) { }
+  constructor(
+    private mockDataService: MockDataService, 
+    private elementRef: ElementRef,
+    private changeDetectorRef: ChangeDetectorRef) { }
 
   ngOnInit(): void {
     this.mockDataService.getMockData().subscribe((data: any[]) => {
@@ -55,8 +59,17 @@ export class SectionComponent implements OnInit {
     }
   }
 
-
   onInViewport(item: any): void {
-    item.show = true;
+    if (!this.shownItems.includes(item)) {
+      item.show = true;
+      this.shownItems.push(item);
+      setTimeout(() => {
+        this.changeDetectorRef.detectChanges();
+      });
+    }
+  }
+
+  trackByFn(index: number, item: any) {
+    return item.id;
   }
 }

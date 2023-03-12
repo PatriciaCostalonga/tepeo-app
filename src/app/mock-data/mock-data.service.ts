@@ -33,8 +33,15 @@ const mockData = [
 export class MockDataService {
   constructor() { }
 
+  // getMockData(): Observable<any[]> {
+  //   return of(mockData).pipe(delay(1000)); 
+  // }
+
   getMockData(): Observable<any[]> {
-    return of(mockData).pipe(delay(1000)); 
+    return of(mockData.map(item => {
+      const el = document.getElementById(item.id);
+      return { ...item, el };
+    }));
   }
 }
 

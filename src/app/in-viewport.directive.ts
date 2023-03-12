@@ -12,19 +12,23 @@ export class InViewportDirective implements OnInit, OnDestroy {
   constructor(private el: ElementRef) { }
 
   ngOnInit() {
-    this.observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          this.inViewport.emit();
-        }
+    // Check that the element is not null before observing it
+    if (this.el.nativeElement) {
+      this.observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            this.inViewport.emit();
+          }
+        });
       });
-    });
 
-    this.observer.observe(this.el.nativeElement);
+      this.observer.observe(this.el.nativeElement);
+    }
   }
 
   ngOnDestroy() {
-    this.observer.disconnect();
+    if (this.observer) {
+      this.observer.disconnect();
+    }
   }
-
 }
