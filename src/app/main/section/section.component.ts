@@ -21,20 +21,13 @@ import {
         style({ opacity: 0 }),
         animate('0.5s ease-in', style({ opacity: 1 })),
       ]),
-    ]),
-    trigger('onInViewport', [
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(20px)' }),
-        animate('0.3s ease-in', style({ opacity: 1, transform: 'translateY(0)' })),
-      ]),
-    ]),
+    ])
   ],
 })
 
 export class SectionComponent implements OnInit {
   @Input() searchTerm: string | string[];
   @ViewChild('content') content: ElementRef;
-  @ViewChild('firstItem') firstItem: TemplateRef<any>;
 
   mockData$: Observable<any[]>;
   el: ElementRef;
@@ -62,21 +55,8 @@ export class SectionComponent implements OnInit {
     }
   }
 
-  fadeIn(item: any): void {
-
-    console.log("fadein");
-
-    // Trigger fade-in animation for first item
-    item.show = true;
-
-    
-  }
 
   onInViewport(item: any): void {
-
-    console.log("onInViewport");
-
-    // Trigger fade-in animation for other items
     item.show = true;
   }
 }
