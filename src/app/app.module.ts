@@ -5,9 +5,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ThemeService } from './theme.service';
 import { MockDataService } from './mock-data/mock-data.service';
 import { HighlightDirective } from './highlight.directive';
+import { InViewportDirective } from './in-viewport.directive';
 
 import { AppComponent } from './app.component';
 import { SectionComponent } from './main/section/section.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -15,10 +17,12 @@ import { SectionComponent } from './main/section/section.component';
     HeaderComponent,
     MainComponent,
     HighlightDirective,
-    SectionComponent
+    SectionComponent,
+    InViewportDirective
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    BrowserAnimationsModule
   ],
   providers: [
     ThemeService, 

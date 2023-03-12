@@ -1,9 +1,10 @@
-<div *ngFor="let item of mockData$ | async" class="mockdata-container">
-    <img [src]="item.imageSrc" />
+<div *ngFor="let item of mockData$ | async; let i = index;" class="mockdata-container" appInViewport (inViewport)="onInViewport(item)">
+  <ng-template #firstItem>
+    <img [src]="item.imageSrc" [ngClass]="{'fadeIn': item.show}" [@fadeIn]="item.show ? 'visible' : 'hidden'"/>
 
-    <div class="text-container">
-      <img class="random-blob" [src]="item.blob" />
-      
+    <div class="text-container" [ngClass]="{'fadeIn': item.show}" [@fadeIn]="item.show ? 'visible' : 'hidden'">
+      <img [src]="item.blob" class="random-blob" />
+
       <div class="text-details">
         <h2 [highlight]="['not the planet', 'clean', 'green', 'affordable', 'power you generate']">{{ item.title }}</h2>
         <p [highlight]="['future', 'green sustainable heating', 'Zero Emission Boiler', 'automatically store']">
@@ -11,4 +12,20 @@
         </p>
       </div>
     </div>
-  </div>
+  </ng-template>
+  <ng-template #otherItems>
+    <img [src]="item.imageSrc" [ngClass]="{'onInViewport': item.show}" [@onInViewport]="item.show ? 'visible' : 'hidden'"/>
+
+    <div class="text-container" [ngClass]="{'onInViewport': item.show}" [@onInViewport]="item.show ? 'visible' : 'hidden'">
+      <img [src]="item.blob" class="random-blob" />
+
+      <div class="text-details">
+        <h2 [highlight]="['not the planet', 'clean', 'green', 'affordable', 'power you generate']">{{ item.title }}</h2>
+        <p [highlight]="['future', 'green sustainable heating', 'Zero Emission Boiler', 'automatically store']">
+          {{ item.description }}
+        </p>
+      </div>
+    </div>
+  </ng-template>
+  <ng-container *ngIf="i === 0; then firstItem else otherItems"></ng-container>
+</div>
