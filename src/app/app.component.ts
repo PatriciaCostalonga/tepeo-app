@@ -17,10 +17,10 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     if (this.themeService.isDarkTheme()) {
       document.body.classList.add('dark-theme');
-      console.log("This users uses dark mode");
+      console.log("This user uses dark mode");
     } else {
       document.body.classList.add('light-theme');
-      console.log("This users uses light mode");
+      console.log("This user uses light mode");
     }
   }
 }
