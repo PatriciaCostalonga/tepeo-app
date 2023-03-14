@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { ThemeService } from './theme.service';
 
-
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
