@@ -260,11 +260,29 @@
     }
 }
 
-.fade-in-section {
+.fadeup {
+    transform: translateY(50px);
     opacity: 0;
-    transition: opacity 1s ease-in-out;
+    transition-property: transform, opacity;
+    transition-duration: 1s;
+    transition-timing-function: linear;
 }
 
-.fade-in {
+.in-view {
+    transform: none;
     opacity: 1;
 }
+
+.fadeIn {
+    animation: fadeInAnimation 0.5s ease-out;
+    opacity: 1;
+  }
+  
+  @keyframes fadeInAnimation {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
