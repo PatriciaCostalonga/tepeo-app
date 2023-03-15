@@ -13,14 +13,7 @@ export class ThemeService {
   constructor() { }
 
   public getTheme(): string {
-    const savedTheme = localStorage.getItem(this.THEME_KEY);
-    if (savedTheme) {
-      return savedTheme;
-    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-      return this.DARK_THEME;
-    } else {
-      return this.LIGHT_THEME;
-    }
+    return localStorage.getItem(this.THEME_KEY) || this.LIGHT_THEME;
   }
 
   public setTheme(theme: string): void {
