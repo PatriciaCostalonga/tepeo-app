@@ -6,6 +6,7 @@ import { ThemeService } from './theme.service';
 import { MockDataService } from './mock-data/mock-data.service';
 import { HighlightDirective } from './highlight.directive';
 import { InViewportDirective } from './in-viewport.directive';
+import { SlideRevealDirective } from './directives/slide-reveal/slide-reveal.directive';
 
 import { AppComponent } from './app.component';
 import { SectionComponent } from './main/section/section.component';
@@ -18,7 +19,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MainComponent,
     HighlightDirective,
     SectionComponent,
-    InViewportDirective
+    InViewportDirective,
+    SlideRevealDirective
   ],
   imports: [
     BrowserModule,

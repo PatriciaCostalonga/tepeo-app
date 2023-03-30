@@ -15,58 +15,68 @@
         max-width: 1502px;
         align-items: center;
         margin-bottom: 120px;
-    
-        img{
-            width: 750px;
-            height: 636px;
-            border-radius: 150px;
-            object-fit: cover;
-            background-repeat: no-repeat;
-            box-shadow: 0 5px 16px rgba(0, 0, 0, 0.19), 0 6px 16px rgba(0, 0, 0, 0.23);
-        }
-    
-        .text-container{
+
+        .slider-reveal{
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             justify-content: space-between;
-            align-items: center;
-            position: relative;
-            height: 100%;
             width: 100%;
-            margin-left: 20px; 
-            
-            .text-details{
-                position: absolute;
-                max-width: 640px;
-                top: 30%;
+            max-width: 1502px;
+            align-items: center;
+            margin-bottom: 120px;
+
+            img{
+                width: 750px;
+                height: 636px;
+                border-radius: 150px;
+                object-fit: cover;
+                background-repeat: no-repeat;
+                box-shadow: 0 5px 16px rgba(0, 0, 0, 0.19), 0 6px 16px rgba(0, 0, 0, 0.23);
             }
-    
-            .random-blob{
-                display: block;
-                width: 540px;
-                height: auto;
-                position: relative;
-                box-shadow: none;
-            }
-        }
-    
-        &:nth-of-type(even){
-            flex-direction: row-reverse;
-            margin-left: 0;
-            margin-right: 20px;
-        }
-    
-        &:first-of-type,
-        &:nth-of-type(2){
+        
             .text-container{
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                align-items: center;
+                position: relative;
+                height: 100%;
+                width: 100%;
+                margin-left: 20px; 
+                
                 .text-details{
-                    h2{
-                        overflow-wrap: break-word;
-                        width: 65%;
+                    position: absolute;
+                    max-width: 640px;
+                    top: 30%;
+                }
+        
+                .random-blob{
+                    display: block;
+                    width: 540px;
+                    height: auto;
+                    position: relative;
+                    box-shadow: none;
+                }
+            }
+        
+            &:nth-of-type(even){
+                flex-direction: row-reverse;
+                margin-left: 0;
+                margin-right: 20px;
+            }
+        
+            &:first-of-type,
+            &:nth-of-type(2){
+                .text-container{
+                    .text-details{
+                        h2{
+                            overflow-wrap: break-word;
+                            width: 65%;
+                        }
                     }
                 }
             }
-        }
+        }        
     }    
 }
 
